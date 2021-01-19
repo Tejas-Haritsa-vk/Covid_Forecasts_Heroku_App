@@ -158,8 +158,7 @@ def forecasted_database():
             forecasts_active_daywise_low.extend(pd.Series(forecast_active_low).diff(periods=1).iloc[1:])
             
         except Exception as error:
-            print(error)
-            pass
+            print("Rgion=", Region, "\n", "ERROR:",error)
 
     forecast_df.Forecasted = forecasts
     forecast_df.Date = days
